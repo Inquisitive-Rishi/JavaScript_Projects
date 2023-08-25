@@ -5,34 +5,55 @@ let getComputerChoice = () => {
     return choices[choice];
 }
 
-let playerChoice = prompt("Enter a choice:\nRock, Paper, Scissor");
-let computerSelection = getComputerChoice();
-
 let rock = 'rock';
 let paper = 'paper';
 let scissor = 'scissor';
+let result; 
 
 let playRound = (playerSelection, computerSelection) => {
+    playerSelection = prompt("Enter a choice:\nRock, Paper, Scissor").toLowerCase();
+    computerSelection = getComputerChoice();
 
     console.log(`Human: ${playerSelection}`);
     console.log(`AI: ${computerSelection}`);
     if (playerSelection == computerSelection) {
-        return "It's a tie.";
+        result = "It's a tie.";
+        console.log(result);
     } else {
         if (playerSelection == rock && computerSelection == paper) {
-            return `You loose! ${paper} beats ${rock}`;
+            result = `You loose! ${paper} beats ${rock}`;
+            console.log(result);
         } else if (playerSelection == rock && computerSelection == scissor) {
-            return `You win! ${rock} beats ${scissor}`;
+            result = `You win! ${rock} beats ${scissor}`;
+            console.log(result);
         } else if (playerSelection == paper && computerSelection == rock) {
-            return `You win! ${paper} beats ${rock}`;
+            result = `You win! ${paper} beats ${rock}`;
+            console.log(result);
         } else if (playerSelection == paper && computerSelection == scissor) {
-            return `You loose! ${scissor} beats ${paper}`;
+            result = `You loose! ${scissor} beats ${paper}`;
+            console.log(result);
         } else if (playerSelection == scissor && computerSelection == rock) {
-            return `You loose! ${rock} beats ${scissor}`;
+            result = `You loose! ${rock} beats ${scissor}`;
+            console.log(result);
         } else if (playerSelection == scissor && computerSelection == paper) {
-            return `You win! ${scissor} beats ${paper}`;
+            result = `You win! ${scissor} beats ${paper}`;
+            console.log(result);
         }
     }
 }
 
-console.log(playRound(playerChoice,getComputerChoice()));
+let playerScore = 0;
+let computerScore = 0;
+
+let game = () => {
+    for (let i = 1; i <= 5; i++) {
+        playRound();
+        if (result.includes("win")) {
+            playerScore++;
+        } else if (result.includes("loose")) {
+            computerScore++;
+        }
+    }
+}
+
+game();
