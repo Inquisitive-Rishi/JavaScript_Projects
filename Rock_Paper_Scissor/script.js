@@ -54,6 +54,18 @@ let game = () => {
             computerScore++;
         }
     }
+    checkWinner();
 }
 
+function checkWinner() {
+    console.log();
+    console.log("---FINAL SCORE---");
+    console.log("Player: "+playerScore);
+    console.log("AI: "+computerScore);
+    if (playerScore > computerScore) {
+        console.log("You saved the humanity from AI invasion.");
+    } else {
+        console.log("OMG! AI has taken over humanity!");
+    }
+}
 game();
