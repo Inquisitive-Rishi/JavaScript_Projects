@@ -11,8 +11,6 @@ let scissor = 'scissor';
 let result; 
 
 let playRound = (playerSelection, computerSelection) => {
-    playerSelection = prompt("Enter a choice:\nRock, Paper, Scissor").toLowerCase();
-    computerSelection = getComputerChoice();
 
     console.log(`Human: ${playerSelection}`);
     console.log(`AI: ${computerSelection}`);
@@ -46,14 +44,12 @@ let playerScore = 0;
 let computerScore = 0;
 
 let game = () => {
-    for (let i = 1; i <= 5; i++) {
-        playRound();
-        if (result.includes("win")) {
+    playRound();
+        if (result.includes("win"))     {
             playerScore++;
         } else if (result.includes("loose")) {
             computerScore++;
         }
-    }
     checkWinner();
 }
 
@@ -70,4 +66,10 @@ function checkWinner() {
         console.log("It was a tough fight! No one wins.");
     }
 }
-game();
+
+// DOM section:
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => playRound(button.id,getComputerChoice()))
+});
