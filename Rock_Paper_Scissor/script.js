@@ -64,8 +64,10 @@ function checkWinner() {
     console.log("AI: "+computerScore);
     if (playerScore > computerScore) {
         console.log("You saved the humanity from AI invasion.");
-    } else {
+    } else if (playerScore < computerScore) {
         console.log("OMG! AI has taken over humanity!");
+    } else {
+        console.log("It was a tough fight! No one wins.");
     }
 }
 game();
