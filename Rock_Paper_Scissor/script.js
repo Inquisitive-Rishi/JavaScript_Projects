@@ -1,3 +1,15 @@
+// DOM: player choice :
+const feed = document.querySelector('#feed');
+const pc = document.querySelector('#pc')
+const cc = document.querySelector('#cc')
+const rr = document.querySelector('#rnd-rslt')
+
+feed.appendChild(pc);
+feed.appendChild(cc);   
+feed.appendChild(rr);
+
+
+
 let choices = ['rock', 'paper', 'scissor'];
 
 let getComputerChoice = () => {
@@ -12,30 +24,33 @@ let result;
 
 let playRound = (playerSelection, computerSelection) => {
 
-    console.log(`Human: ${playerSelection}`);
-    console.log(`AI: ${computerSelection}`);
+    pc.textContent = `Human: ${playerSelection}`
+    cc.textContent = `AI: ${computerSelection}`
+    console.log()
+    pc.textContent = `Human: ${playerSelection}`;
+    cc.textContent = `AI: ${computerSelection}`;
     if (playerSelection == computerSelection) {
         result = "It's a tie.";
-        console.log(result);
+        rr.textContent = result;
     } else {
         if (playerSelection == rock && computerSelection == paper) {
             result = `You loose! ${paper} beats ${rock}`;
-            console.log(result);
+            rr.textContent = result;
         } else if (playerSelection == rock && computerSelection == scissor) {
             result = `You win! ${rock} beats ${scissor}`;
-            console.log(result);
+            rr.textContent = result;
         } else if (playerSelection == paper && computerSelection == rock) {
             result = `You win! ${paper} beats ${rock}`;
-            console.log(result);
+            rr.textContent = result;
         } else if (playerSelection == paper && computerSelection == scissor) {
             result = `You loose! ${scissor} beats ${paper}`;
-            console.log(result);
+            rr.textContent = result;
         } else if (playerSelection == scissor && computerSelection == rock) {
             result = `You loose! ${rock} beats ${scissor}`;
-            console.log(result);
+            rr.textContent = result;
         } else if (playerSelection == scissor && computerSelection == paper) {
             result = `You win! ${scissor} beats ${paper}`;
-            console.log(result);
+            rr.textContent = result;
         }
     }
 }
@@ -67,9 +82,10 @@ function checkWinner() {
     }
 }
 
-// DOM section:
+// DOM: button Choice
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach(button => {
     button.addEventListener('click', () => playRound(button.id,getComputerChoice()))
 });
+
