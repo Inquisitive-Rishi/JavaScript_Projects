@@ -11,6 +11,15 @@ const winner = document.querySelector('#winner');
 const pw = document.querySelector('#pw');
 const cw = document.querySelector('#cs');
 
+const rldbtndiv = document.querySelector('#rldBtn');
+const rldbtn = document.createElement('button');
+
+function reloadPage() {
+    rldbtndiv.appendChild(rldbtn);
+    rldbtn.textContent = "Reset";
+    rldbtn.addEventListener('click', ()=> window.location.reload());
+}
+
 feed.appendChild(pc);
 feed.appendChild(cc);   
 feed.appendChild(rr);
@@ -43,6 +52,7 @@ function playRound(playerSelection, computerSelection) {
 
     if (computerScore >= 5 || playerScore >= 5) {
         checkWinner();
+        reloadPage();
         return;
     } else {
         pc.textContent = `Human: ${playerSelection}`
