@@ -9,16 +9,10 @@ const ps = document.querySelector('#ps');
 const cs = document.querySelector('#cs');
 const winner = document.querySelector('#winner');
 const pw = document.querySelector('#pw');
-const cw = document.querySelector('#cs');
+const cw = document.querySelector('#cw');
 
 const rldbtndiv = document.querySelector('#rldBtn');
 const rldbtn = document.createElement('button');
-
-function reloadPage() {
-    rldbtndiv.appendChild(rldbtn);
-    rldbtn.textContent = "Reset";
-    rldbtn.addEventListener('click', ()=> window.location.reload());
-}
 
 feed.appendChild(pc);
 feed.appendChild(cc);   
@@ -32,6 +26,12 @@ buttons.forEach(button => {
     button.addEventListener('click', () => 
     playRound(button.id,getComputerChoice()))
 });
+
+function reloadPage() {
+    rldbtndiv.appendChild(rldbtn);
+    rldbtn.textContent = "Reset";
+    rldbtn.addEventListener('click', ()=> window.location.reload());
+}
 
 let choices = ['rock', 'paper', 'scissor'];
 
