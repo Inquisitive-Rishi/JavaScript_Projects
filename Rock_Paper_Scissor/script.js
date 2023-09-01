@@ -46,12 +46,14 @@ let playerScore = 0;
 let computerScore = 0;
 
 let game = () => {
+    for (let i = 1; i <= 5; i++) {
         playRound();
         if (result.includes("win")) {
             playerScore++;
         } else if (result.includes("loose")) {
             computerScore++;
         }
+    }
     checkWinner();
 }
 
