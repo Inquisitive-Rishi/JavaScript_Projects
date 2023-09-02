@@ -1,18 +1,30 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    height: 100%
+}
+
 body {
+    background-color: rgb(32, 32, 32);
+    font-size: 24px;
+    color: white;
     display: flex;
-    height:auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-* {
-    margin: 0px;
-    padding: 0px;
-}
-/* Header */ 
 
-h1 {
+
+.rps {
+    padding: 0px;
+    font-family: 'pixeboy';
+    color: rgb(246, 246, 97);
+    font-size: 90px;
+    font-weight: 500;
     margin: 10px auto;
 }
 
@@ -23,10 +35,23 @@ h1 {
     margin-bottom: 30px;
 }
 
-#container button {
-    height: 7rem;
-    width: 7rem;
+#container img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    border: 1px solid grey;
+    margin: 0;
+}
 
+.button:hover {
+    transform: scale(1.05);
+}
+
+.button #rock {
+    height: 200px;
+    width: 200px;
 }
 
 .feeds {
@@ -52,5 +77,6 @@ h1 {
 }
 
 #rldBtn {
+    text-align: center;
     margin-top: 20px;
 }

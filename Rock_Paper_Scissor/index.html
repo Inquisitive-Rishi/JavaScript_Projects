@@ -8,12 +8,21 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Rock Paper Scissor</h1>
+    <div class="header">
+    <div class="rps">Rock Paper Scissor</div>
+    </div>
+    <div class="main">
     <div class="main-container">
     <div id="container">
-        <button id="rock">rock</button>
-        <button id="paper">paper</button>
-        <button id="scissor">scissor</button>
+        <div id="rock" class="button">
+            <img id="1" class="rock" src="images/rock.png" alt="rock">
+        </div>
+        <div id="paper" class="button">
+            <img id="2" class="paper" src="images/paper.png" alt="rock">
+        </div>
+        <div id="scissor" class="button">
+            <img id="3" class="scissor" src="images/scissor.png" alt="rock">
+        </div>
     </div>
     <div class="feeds">
     <div id="choice">
@@ -32,6 +41,8 @@
     </div>
 </div>
     <div id="rldBtn"></div>
+</div>
+
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 // DOM: player choice :
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.button');
 const choice = document.querySelector('#choice');
 const pc = document.querySelector('#pc')
 const cc = document.querySelector('#cc')
@@ -13,7 +13,13 @@ const pw = document.querySelector('#pw');
 const cw = document.querySelector('#cw');
 
 const rldbtndiv = document.querySelector('#rldBtn');
-const rldbtn = document.createElement('button');
+const rldbtn = document.createElement('div');
+
+rldbtn.style.padding = '15px';
+rldbtn.style.fontSize = '24px';
+rldbtn.style.border = '1px solid black';
+rldbtn.style.backgroundColor = 'rgb(231, 62, 62)';
+
 
 choice.appendChild(pc);
 choice.appendChild(cc);   
