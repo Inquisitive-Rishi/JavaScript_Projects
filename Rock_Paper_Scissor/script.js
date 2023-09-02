@@ -1,9 +1,10 @@
 // DOM: player choice :
 const buttons = document.querySelectorAll('button');
-const feed = document.querySelector('#feed');
+const choice = document.querySelector('#choice');
 const pc = document.querySelector('#pc')
 const cc = document.querySelector('#cc')
 const rr = document.querySelector('#rnd-rslt')
+const rslt = document.querySelector('#rslt')
 const scoreDiv = document.querySelector('#score-feed');
 const ps = document.querySelector('#ps');
 const cs = document.querySelector('#cs');
@@ -14,13 +15,13 @@ const cw = document.querySelector('#cw');
 const rldbtndiv = document.querySelector('#rldBtn');
 const rldbtn = document.createElement('button');
 
-feed.appendChild(pc);
-feed.appendChild(cc);   
-feed.appendChild(rr);
+choice.appendChild(pc);
+choice.appendChild(cc);   
 scoreDiv.appendChild(ps);
 scoreDiv.appendChild(cs);
 winner.appendChild(pw)
 winner.appendChild(cw)
+rslt.appendChild(rr)
 
 buttons.forEach(button => {
     button.addEventListener('click', () => 
@@ -51,10 +52,9 @@ let computerScore = 0;
 function playRound(playerSelection, computerSelection) {
 
     if (computerScore >= 5 || playerScore >= 5) {
-        checkWinner();
-        reloadPage();
         return;
-    } else {
+    }
+
         pc.textContent = `Human: ${playerSelection}`
         cc.textContent = `AI: ${computerSelection}`
         if (playerSelection == computerSelection) {
@@ -91,6 +91,10 @@ function playRound(playerSelection, computerSelection) {
     }
     ps.textContent = `Player score: ${playerScore}`;
     cs.textContent = `Computer Score: ${computerScore}`;
+    if (computerScore >= 5 || playerScore >= 5) {
+        checkWinner();
+        reloadPage();
+        return;
 }
 }
 

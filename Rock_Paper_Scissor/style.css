@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    height:auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+/* Header */ 
+
+h1 {
+    margin: 10px auto;
+}
+
+#container {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+#container button {
+    height: 7rem;
+    width: 7rem;
+
+}
+
+.feeds {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.feeds #choice {
+    margin-right: auto;
+}
+
+.main-container {
+    margin: auto auto;
+    flex-grow: 0;
+}
+
+#winner {
+    text-align: center;
+}
+
+#rslt {
+    text-align: center;
+}
+
+#rldBtn {
+    margin-top: 20px;
+}
