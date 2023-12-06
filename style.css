@@ -46,6 +46,10 @@ body {
     margin: 0;
 }
 
+.button {
+    background-color: rgb(30, 29, 29);
+}
+
 .button:hover {
     transform: scale(1.05);
 }
