@@ -1,13 +1,13 @@
 // DOM: player choice :
 const buttons = document.querySelectorAll('.button');
 const choice = document.querySelector('#choice');
-const pc = document.querySelector('#pc')
-const cc = document.querySelector('#cc')
+const pc = document.querySelector('#player-choice')
+const cc = document.querySelector('#computer-choice')
 const rr = document.querySelector('#rnd-rslt')
 const rslt = document.querySelector('#rslt')
 const scoreDiv = document.querySelector('#score-feed');
-const ps = document.querySelector('#ps');
-const cs = document.querySelector('#cs');
+const ps = document.querySelector('#player-score');
+const cs = document.querySelector('#computer-score');
 const winner = document.querySelector('#winner');
 const pw = document.querySelector('#pw');
 const cw = document.querySelector('#cw');

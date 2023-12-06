@@ -6,10 +6,11 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
-html, body {
-    height: 100%
+body {
+    height: 100vh;
 }
 
 body {
@@ -23,13 +24,10 @@ body {
     justify-content: center;
 }
 
-
-
 .rps {
     padding: 0px;
     font-family: 'pixeboy';
     color: rgb(246, 246, 97);
-    font-size: 90px;
     font-weight: 500;
     margin: 10px auto;
 }
