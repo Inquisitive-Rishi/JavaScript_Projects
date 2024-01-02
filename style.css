@@ -49,13 +49,13 @@ body {
     margin: 0;
 }
 
-.button {
+#container > button {
     background-color: rgb(30, 29, 29);
     transition: border 0.15s ease-in;
     border: 0px;
 }
 
-.button:hover {
+#container > button:hover {
     border: 2px solid yellow
 }
 
