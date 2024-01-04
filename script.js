@@ -1,5 +1,11 @@
 const btnContainer = document.querySelector('#container')
+const playerScore = document.getElementById('#player-score')
+const aiScore = document.getElementById('#computer-score')
+const playerChoice = document.getElementById('#player-choice')
+const aiChoice = document.getElementById('#computer-choice')
 const buttons = document.querySelectorAll('#container button')
+const playerWinner = document.getElementById('#player-winner')
+const aiWinner = document.getElementById('#ai-winner')
 
 const rock = 'rock';
 const paper = 'paper'
@@ -9,11 +15,7 @@ const choices = [rock, paper, scissor]
 let index = Math.trunc(Math.random()*choices.length)
 
 let getComputerChoice = () => choices[index]
-
-
 const playRound = (playerSelection, aiSelection) => {
-    console.log('player -> ', playerSelection);
-    console.log('AI -> ', aiSelection); 
 
     if (playerSelection === aiSelection) {
         return 'It\'s a tie';
@@ -34,8 +36,19 @@ const playRound = (playerSelection, aiSelection) => {
     }
 }
 
+let pScore = 0;
+let computerScore = 0;
+
 buttons.forEach(btn => {
     btn.addEventListener('click', (e) => {
-        console.log(playRound(e.target.id, getComputerChoice()))
+        let result = playRound(e.target.id, getComputerChoice())
+        if (result.includes('AI')) {
+            computerScore++;
+        } else if (result.includes('You')) {
+            pScore++;
+        }
+        console.log('player --> ', pScore);
+        console.log('AI --> ', computerScore);
+        console.log(result);
     })
 })
