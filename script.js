@@ -1,7 +1,5 @@
 const btnContainer = document.querySelector('#container')
-const rockBtn = document.querySelector('#container #rock')
-const paperBtn = document.querySelector('#container #paper')
-const scissorBtn = document.querySelector('#container #scissor')
+const buttons = document.querySelectorAll('#container button')
 
 const rock = 'rock';
 const paper = 'paper'
@@ -10,11 +8,13 @@ const scissor = 'scissor'
 const choices = [rock, paper, scissor]
 let index = Math.trunc(Math.random()*choices.length)
 
-const getComputerChoice = () => choices[index]
-const getHumanChoice = prompt('Enter your choice').toLowerCase()
+let getComputerChoice = () => choices[index]
 
 
 const playRound = (playerSelection, aiSelection) => {
+    console.log('player -> ', playerSelection);
+    console.log('AI -> ', aiSelection); 
+
     if (playerSelection === aiSelection) {
         return 'It\'s a tie';
     } else {
@@ -31,7 +31,11 @@ const playRound = (playerSelection, aiSelection) => {
         } else if (playerSelection === scissor && aiSelection === paper) {
             return `You won ${playerSelection} beats ${aiSelection}`
         }
-    } 
+    }
 }
 
-console.log(playRound(getHumanChoice, getComputerChoice()))
+buttons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        console.log(playRound(e.target.id, getComputerChoice()))
+    })
+})
